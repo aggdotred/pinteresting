@@ -38,8 +38,7 @@ class VideosController < ApplicationController
   
   def destroy
     @video.destroy
-      redirect_to videos_url, notice: 'Video was successfully destroyed.'
-    end
+    redirect_to videos_url, notice: 'Video was successfully destroyed.'
   end
 
   private
@@ -53,4 +52,5 @@ class VideosController < ApplicationController
       params.require(:video).permit(:description)
     end
   end
+
 end

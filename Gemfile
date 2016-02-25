@@ -27,6 +27,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # user accounts
 gem 'devise', '~> 3.5.6'
 
+# image uploads
+gem 'paperclip', github: 'thoughtbot/paperclip'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

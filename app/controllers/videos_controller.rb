@@ -4,7 +4,7 @@ class VideosController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @videos = Video.all
+    @videos = Video.all.order("created_at").paginate(:page => params[:page], :per_page => 1)
   end
 
   def show

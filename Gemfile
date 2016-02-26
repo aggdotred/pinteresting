@@ -33,6 +33,10 @@ gem 'paperclip', github: 'thoughtbot/paperclip'
 # AWS S3 storage
 gem 'aws-sdk', '~> 2.0'
 
+# jquery styling
+gem 'masonry-rails', '~> 0.2.0'
+gem 'jquery-turbolinks'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

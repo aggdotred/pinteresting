@@ -1,12 +1,20 @@
-<%= image_tag @video.image.url %>
-
-<p>
-
-  <strong>Description:</strong>
-  <%= @video.description %>
-</p>
-
-<% if @video.user == current_user %>
-	<%= link_to 'Edit', edit_video_path(@video) %> |
-<% end %>
 <%= link_to 'Back', videos_path %>
+
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<div class="panel panel-default">
+		<div class="panel-heading center">
+			<%= image_tag @video.image.url %>
+		</div>
+		<div class="panel-body">	
+			<p><em><%= @video.description %></em></p>
+
+			<% if @video.user == current_user %>
+				<%= link_to edit_video_path(@video) do %>
+        	<span class="glyphicon glyphicon-edit"></span>
+        	Edit
+      	<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

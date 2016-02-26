@@ -1,14 +1,20 @@
 <div id="videos" class="transitions-enabled">
   <% @videos.each do |video| %>
     <div class="box panel panel-default">
-      <%= image_tag video.image.url(:medium) %>
+      <%= link_to image_tag(video.image.url(:medium)), video %>
       <div class="panel-body">
-        <%= video.description %>
-        <%= video.user.email if video.user %>
-        <%= link_to 'Show', video %>
+        <p><em><%= video.description %></em></p>
         <% if video.user == current_user %>
-          <%= link_to 'Edit', edit_video_path(video) %>
-          <%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div class="actions">
+           <%= link_to edit_video_path(video) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to video, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>

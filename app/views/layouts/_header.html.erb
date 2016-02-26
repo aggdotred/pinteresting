@@ -20,9 +20,10 @@
         <li><%= link_to "About Us", about_path %></li>
         <% if user_signed_in? %>
 
-          <li><%= link_to 'New Video', new_video_path %></li>
-          
+          <li><%= link_to 'Add Video', new_video_path %></li>
+
           <li><%= link_to 'Videos', videos_path %></li>
+
 
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
 

@@ -8,8 +8,7 @@
 		</div>
 		<div class="panel-body">	
 			<p><em><%= @video.description %></em></p>
-			<p>Uploaded by <strong><%= @video.user.fname if @video.user %></strong></p>
-			<% if @video.user == current_user %>
+			<% if current_user.admin? %>
 				<%= link_to edit_video_path(@video) do %>
         	<span class="glyphicon glyphicon-edit"></span>
         	Edit

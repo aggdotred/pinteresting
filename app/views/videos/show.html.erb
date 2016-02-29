@@ -9,6 +9,7 @@
 			</div>
 		</div>
 		<div class="panel-body">	
+			<p><strong><%= video_type(@video.category_id) %></strong></p>
 			<p><em><%= @video.description %></em></p>
 			<% if current_user.admin? %>
 				<%= link_to edit_video_path(@video) do %>

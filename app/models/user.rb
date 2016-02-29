@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
          	  :format => {:with => /\A.*(?=.{8,}).*\Z/ }
 
   has_many :videos
+  has_many :category_id
 
   validates :fname, presence: true
 end

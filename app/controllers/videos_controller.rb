@@ -3,8 +3,10 @@ class VideosController < ApplicationController
   before_action :require_admin, except: [:index, :show]
   before_action :authenticate_user!, except: [:index]
 
+
+
   def index
-    @videos = Video.all.order("created_at").paginate(:page => params[:page], :per_page => 1)
+    @videos = Video.all.order("created_at").paginate(:page => params[:page], :per_page => 5)
   end
 
   def show
@@ -57,7 +59,7 @@ class VideosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params
-      params.require(:video).permit(:description, :image, :embed_code)
+      params.require(:video).permit(:description, :image, :embed_code, :category_id)
     end
   
 end

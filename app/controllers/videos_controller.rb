@@ -1,7 +1,7 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :require_admin, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @videos = Video.all.order("created_at").paginate(:page => params[:page], :per_page => 1)
@@ -49,10 +49,11 @@ class VideosController < ApplicationController
       @video = Video.find(params[:id])
     end
 
-    def correct_user
-      @video = current_user.videos.find_by(id: params[:id])
-      redirect_to videos_path, notice: "Not authorized to edit this video." if @video.nil?
+    def require_admin
+        @user = current_user
+        redirect_to videos_path, notice: "Not authorized." if @user.admin != true
     end
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def video_params

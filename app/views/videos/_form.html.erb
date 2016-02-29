@@ -11,15 +11,20 @@
     </div>
   <% end %>
 
-<div class="form-group">
-    <%= f.label :image %><br>
+  <div class="form-group">
+    <%= f.label "Video Thumbnail" %><br>
     <%= f.file_field :image, class: "form-control" %>
-</div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Video Link" %><br>
+    <%= f.text_field :embed_code %>
+  </div>
 
   <div class="form-group">
     <%= f.label :description %><br>
     <%= f.text_field :description %>
-</div>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

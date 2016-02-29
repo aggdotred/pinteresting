@@ -1,12 +1,15 @@
 <div class="jumbotron center">
-	<h1><%= link_to image_tag ('htrbanner.jpg') %></h1>
-	<% if user_signed_in? %>
-		<%= link_to "Streamline", videos_path, class: "btn btn-primary btn-lg" %>
-		<%= link_to "Streamline", videos_path, class: "btn btn-default btn-lg" %>
-	<% else %>
-		<p>
-			<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
-			<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-		</p>
-	<% end %>
+	<div class="container">
+		<h1>How To Rap</h1>
+		<h2><em>#crisp</em></h2>
+		<% if user_signed_in? %>
+			<%= link_to "Streamline", videos_path, class: "btn btn-primary btn-lg" %>
+			<%= link_to "Essentials", videos_path, class: "btn btn-default btn-lg" %>
+		<% else %>
+			<p>
+				<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+				<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+			</p>
+		<% end %>
+	</div>	
 </div>

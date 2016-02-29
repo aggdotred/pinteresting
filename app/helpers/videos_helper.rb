@@ -1,8 +1,13 @@
 module VideosHelper
 
 	def embed(embed_code)
-    youtube_id = embed_code.split("=").last
-    content_tag(:iframe, nil, src: "//www.youtube.com/embed/#{youtube_id}")
+    video_id = embed_code.split("/").last
+    content_tag(:iframe, nil, src: "//player.vimeo.com/video/#{video_id}")
   end
 
+
+# <iframe src="https://player.vimeo.com/video/155347431" width="500" height="213" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+# <p><a href="https://vimeo.com/155347431">a Drop - short film</a> from <a href="https://vimeo.com/jvanhoenacker">Julien Vanhoenacker</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+# <iframe width="560" height="315" src="https://www.youtube.com/embed/3rePZTLMJYs" frameborder="0" allowfullscreen></iframe>
 end

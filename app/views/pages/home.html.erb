@@ -5,6 +5,9 @@
 		<% if user_signed_in? %>
 			<%= link_to "Streamline", videos_path, class: "btn btn-primary btn-lg" %>
 			<%= link_to "Essentials", videos_path, class: "btn btn-default btn-lg" %>
+			<%= link_to "God Flow", videos_path, class: "btn btn-primary btn-lg" %>
+			<%= link_to "Writer's Block Is Dead", videos_path, class: "btn btn-default btn-lg" %>
+			<%= link_to "Block Exclusive", videos_path, class: "btn btn-primary btn-lg" %>
 		<% else %>
 			<p>
 				<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
